@@ -1,18 +1,15 @@
 import React from "react";
 import {Checkbox} from "@cdk-uip/react-checkbox";
 import { TextField } from "@cdk-uip/react-text-field";
-// import { TextFieldIcon } from "@cdk-uip/react-text-field"
+// import ToDoList from "./ToDoList";
+import { TextFieldIcon } from "@cdk-uip/react-text-field"
 
 
 class ToDoListItem extends React.Component{
-    constructor (props){
-        super(props);
-        this.state = { 
-            value: "" , 
-            checked: false,
-            disabled: false 
-        };
-    }
+   constructor(props){
+       super(props)
+       console.log("");
+   }
 
     render() {
         
@@ -21,26 +18,39 @@ class ToDoListItem extends React.Component{
             <span>
              
                     <Checkbox
-                        checked={this.state.checked}
-                        onChange={e => this.setState({ 
-                            checked: e.target.checked,
-                            disabled: e.target.checked
-                        })}
+                        checked={this.props.item.checked}
+                        value={this.props.item.value}
+                        onChange={e => {
+                            
+                            this.props.updateCheck(this.props.index, e.target.checked, e.target.value);
+
+                        }
+                            // this.setState({ 
+                            // checked: e.target.checked,
+                            // disabled: e.target.checked
+                        // })
+                    }
                     />
                 
               
                 <TextField
                     label="Your Task"
-                    value={this.state.value}
-                    disabled = { this.state.disabled}
-                    onChange={e => this.setState({ value: e.target.value })}
+                    value={this.props.item.value}
+                    disabled = { this.props.item.disabled}
+                    onChange={e => {
+                            this.props.updateV(this.props.index, e.target.value);
+                        }}
                     // trailingIcon={
                     
                     // }
                 />
-                {/* <TextFieldIcon onClick={(e) => {this.removeItem(item)}}>
+                <TextFieldIcon 
+                    onClick={e => {
+                        this.props.delete(this.props.index);
+                    }}
+                >
                         clear
-                </TextFieldIcon> */}
+                </TextFieldIcon>
 
           </span>
         );

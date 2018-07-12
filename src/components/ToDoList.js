@@ -1,7 +1,7 @@
 import React from "react";
 import ToDoListItem from "./ToDoListItem";
 import { Button } from "@cdk-uip/react-button";
-// import { TextFieldIcon } from "@cdk-uip/react-text-field"
+
 
 class ToDoList extends React.Component {
 
@@ -14,7 +14,7 @@ class ToDoList extends React.Component {
             checked: false,
             disabled: false
         });
-        // console.log(items);
+
         this.state = {
             items: items
         }
@@ -32,7 +32,7 @@ class ToDoList extends React.Component {
     }
 
     onChecked(index, newChecked, value){
-        // console.log(newChecked);
+
         let itm = this.state.items;
         itm[index] = {index: index, checked: newChecked, disabled: newChecked, value: value};
         this.setState({items: itm})
@@ -46,8 +46,6 @@ class ToDoList extends React.Component {
             checked: false,
             disabled: false
         })
-        // console.log(itm);
-        // itm[index] = {index: index, checked: newChecked, disabled: newChecked, value: value};
         this.setState({items: itm})
     }
 

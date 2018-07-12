@@ -1,7 +1,7 @@
 import React from "react";
 import {Checkbox} from "@cdk-uip/react-checkbox";
 import { TextField } from "@cdk-uip/react-text-field";
-// import ToDoList from "./ToDoList";
+
 import { TextFieldIcon } from "@cdk-uip/react-text-field"
 
 
@@ -25,10 +25,7 @@ class ToDoListItem extends React.Component{
                             this.props.updateCheck(this.props.index, e.target.checked, e.target.value);
 
                         }
-                            // this.setState({ 
-                            // checked: e.target.checked,
-                            // disabled: e.target.checked
-                        // })
+                    
                     }
                     />
                 
@@ -40,9 +37,7 @@ class ToDoListItem extends React.Component{
                     onChange={e => {
                             this.props.updateV(this.props.index, e.target.value);
                         }}
-                    // trailingIcon={
-                    
-                    // }
+                   
                 />
                 <TextFieldIcon 
                     onClick={e => {

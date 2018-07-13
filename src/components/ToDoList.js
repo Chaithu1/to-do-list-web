@@ -62,20 +62,14 @@ class ToDoList extends React.Component {
         return(
             <div>
                 <Button className = "add-btn" raised 
-                onClick={e =>{
-                    this.addItem();
-                } } >
+                onClick={e =>this.addItem()} 
+                >
                     Add Task
                 </Button>
-                {this.state.items.map((item,index) => {
-                    return (
-                        <div key = {index}> 
-                            <ToDoListItem index = {index} item = {item} updateV = {this.onValueChange} updateCheck ={this.onChecked} delete={this.deleteItem}   />
-                          
-                        </div>);
-                })}
-              
-            </div>
+                {this.state.items.map((item,index) => (<div key = {index}>
+                <ToDoListItem index = {index} item = {item} updateV = {this.onValueChange} updateCheck ={this.onChecked} delete={this.deleteItem}   />
+                </div>))}
+                </div>
         );
     }
 };

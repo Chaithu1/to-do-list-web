@@ -17,13 +17,7 @@ class ToDoListItem extends React.Component{
                     <Checkbox
                         checked={this.props.item.checked}
                         value={this.props.item.value}
-                        onChange={e => {
-                            
-                            this.props.updateCheck(this.props.index, e.target.checked);
-
-                        }
-                    
-                    }
+                        onChange={e => this.props.updateCheck(this.props.index, e.target.checked)}
                     />
                 
               
@@ -31,15 +25,11 @@ class ToDoListItem extends React.Component{
                     label="Your Task"
                     value={this.props.item.value}
                     disabled = { this.props.item.disabled}
-                    onChange={e => {
-                            this.props.updateV(this.props.index, e.target.value);
-                        }}
+                    onChange={e =>this.props.updateV(this.props.index, e.target.value)}
                    
                 />
                 <TextFieldIcon 
-                    onClick={e => {
-                        this.props.delete(this.props.index);
-                    }}
+                    onClick={e => this.props.delete(this.props.index)}
                 >
                         clear
                 </TextFieldIcon>

@@ -6,10 +6,7 @@ import { TextFieldIcon } from "@cdk-uip/react-text-field"
 
 
 class ToDoListItem extends React.Component{
-   constructor(props){
-       super(props)
-       console.log("");
-   }
+  
 
     render() {
         
@@ -22,7 +19,7 @@ class ToDoListItem extends React.Component{
                         value={this.props.item.value}
                         onChange={e => {
                             
-                            this.props.updateCheck(this.props.index, e.target.checked, e.target.value);
+                            this.props.updateCheck(this.props.index, e.target.checked);
 
                         }
                     

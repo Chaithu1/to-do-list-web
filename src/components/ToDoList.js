@@ -27,14 +27,15 @@ class ToDoList extends React.Component {
     
     onValueChange(index, newValue){
         let itm = this.state.items;
-        itm[index] = {index: index, value: newValue, checked: false, disabled: false};
+        itm[index].value = newValue;
         this.setState({items: itm})
     }
 
-    onChecked(index, newChecked, value){
+    onChecked(index, newChecked){
 
         let itm = this.state.items;
-        itm[index] = {index: index, checked: newChecked, disabled: newChecked, value: value};
+        itm[index].checked = newChecked;
+        itm[index].disabled = newChecked;
         this.setState({items: itm})
     }
 

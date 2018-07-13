@@ -6,11 +6,10 @@ import {
   CardTitle,
   // CardSubtitle,
   CardText
-  // CardActions,
-  // CardActionButton
+
+
 } from "@cdk-uip/react-card";
-// import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-// import { LinkContainer } from "react-router-bootstrap";
+
 import ToDoList from "./ToDoList";
 
 

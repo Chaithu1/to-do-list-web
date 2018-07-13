@@ -4,13 +4,17 @@ import {
   Card,
   CardHeader,
   CardTitle,
-  CardSubtitle,
-  CardText,
-  CardActions,
-  CardActionButton
+  // CardSubtitle,
+  CardText
+
+
 } from "@cdk-uip/react-card";
-import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-import { LinkContainer } from "react-router-bootstrap";
+
+import ToDoList from "./ToDoList";
+
+
+
+
 
 const Home = () => (
   <LayoutGrid>
@@ -18,42 +22,17 @@ const Home = () => (
       <Card>
         <CardHeader>
           <CardTitle large>
-            <FormattedMessage
-              id="Card.title"
-              defaultMessage="Welcome to React"
-            />
+          To Do List: 
           </CardTitle>
-          <CardSubtitle>
-            <FormattedMessage
-              id="Card.subtitle"
-              defaultMessage="With Material Design"
-            />
-          </CardSubtitle>
         </CardHeader>
+
         <CardText>
-          <FormattedHTMLMessage
-            id="Card.text"
-            defaultMessage="To get started, edit <code>src/Home.js</code> and save to reload."
-          />
-        </CardText>
-        <CardActions>
-          <LinkContainer to="/sample" activeClassName="">
-            <CardActionButton>
-              <FormattedMessage
-                id="Card.sample"
-                defaultMessage="Redux sample page"
-              />
-            </CardActionButton>
-          </LinkContainer>
-          <LinkContainer to="/intl" activeClassName="">
-            <CardActionButton>
-              <FormattedMessage id="Card.intl" defaultMessage="Localisation" />
-            </CardActionButton>
-          </LinkContainer>
-        </CardActions>
+         <ToDoList/>
+        </CardText>      
       </Card>
     </LayoutGridCell>
   </LayoutGrid>
+  
 );
 
 export default Home;
